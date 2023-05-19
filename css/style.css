@@ -1,0 +1,312 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --very-dark-grayish-blue: #48556a;
+  --desaturated-dark-blue: #6d7f97;
+  --grayish-blue: #9eafc2;
+  --light-grayish-blue: #edf2f7;
+  --white: #fff;
+
+  /* Theming */
+  --body-color: var(--very-dark-grayish-blue);
+  --body-color-light: var(--desaturated-dark-blue);
+  --body-bg: var(--light-grayish-blue);
+  --font-body: 'Manrope', sans-serif;
+}
+
+/* Basic reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--body-color-light);
+  background-color: var(--body-bg);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.12px;
+  line-height: 2rem;
+}
+
+img,
+picture,
+video {
+  display: inline-block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--body-color);
+  font-weight: 700;
+}
+
+/* Container */
+.container {
+  min-height: 100vh;
+  padding: 2.8rem 1.6rem;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 37.5rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4rem 4rem -1rem rgba(201, 213, 225, 0.5);
+}
+
+.card-img {
+  width: 100%;
+  height: 20rem;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 3.6rem 3.2rem 0 3.2rem;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  letter-spacing: 0.2px;
+  line-height: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.card-text {
+  margin-bottom: 2rem;
+}
+
+.card-footer,
+.share-content {
+  padding: 1.6rem 2rem;
+}
+
+.card-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Author */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.author-avatar {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.author-details {
+}
+
+.author-name {
+  font-size: 1.3rem;
+}
+
+.author-text {
+  color: var(--grayish-blue);
+}
+
+/* Share */
+.share {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: width 0.6s ease;
+}
+
+.share-content {
+  background-color: var(--very-dark-grayish-blue);
+  display: flex;
+  align-items: center;
+  gap: 2.1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.share-title {
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.share-menu {
+}
+
+.share-list {
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.share-item {
+  display: flex;
+  align-items: center;
+}
+
+.share-link:link,
+.share-link:visited {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.share-link:hover,
+.share-link:active {
+  color: var(--light-grayish-blue);
+}
+
+.share-link svg {
+  fill: currentColor;
+}
+
+.share-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  color: var(--desaturated-dark-blue);
+  background-color: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.share-icon svg {
+  fill: currentColor;
+}
+
+/* Functionality classes */
+.share.open {
+  width: 100%;
+}
+
+.share.open + .share-icon {
+  color: var(--white);
+  background-color: var(--desaturated-dark-blue);
+}
+
+/**************************************/
+/* Responsive styling */
+/**************************************/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .card {
+    max-width: 73rem;
+    display: flex;
+    align-items: stretch;
+    overflow: visible;
+  }
+
+  .card-img {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .card-img {
+    flex-basis: 28.5rem;
+    flex-shrink: 0;
+    height: auto;
+  }
+
+  .card-main {
+    padding-bottom: 0.8rem;
+  }
+
+  .share {
+    width: auto;
+    top: -100%;
+    left: auto;
+    right: -50%;
+    border-radius: 1rem;
+    overflow: visible;
+    color: var(--very-dark-grayish-blue);
+    transform: translate(calc(-50% - 0.8rem), -1.6rem) scale(0.25);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 1rem 1rem rgba(201, 213, 225, 0.5);
+  }
+
+  .share::after {
+    display: inline-block;
+    content: '';
+    border: 1.2rem solid currentColor;
+    z-index: 20;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .share-content {
+    padding: 1.8rem 3.6rem;
+    border-radius: 1rem;
+  }
+
+  .share.open {
+    transform: translate(calc(-50% - 0.8rem), -1.6rem) scale(1);
+    visibility: visible;
+    opacity: 1;
+    width: auto;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
